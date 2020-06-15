@@ -1,0 +1,30 @@
+<html>
+<title>registerform</title>
+
+<body>
+    <form>
+        <h2>Registraion form</h2>
+        Enter your Name<input type="text" id="username" required /><br>
+        Select your password<input type="password" id="password" required /><br>
+        Enter emailID<input type="email" id="email" required /><br>
+        Enter your message<input type="textarea" id="message" width="10" height="5" required /><br><br>
+        <input type="submit" onclick="store()" id="submit">
+        
+    </form>
+
+    <script>
+        function store() {
+            event.preventDefault();
+             var rusername= document.getElementById("username").value;
+             var rpassword= document.getElementById("password").value;
+             var remail= document.getElementById("email").value;
+             var rmessage= document.getElementById("message").value;
+             var ru={ "uname":rusername, "pass": rpassword, "em": remail, "message":rmessage};
+             localStorage.setItem("ru",JSON.stringify(ru));
+             window.location="login.html";
+             
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<html>
+<title>login</title>
+
+<head></head>
+
+<body>
+
+
+    <center>
+        <form>
+            <h2>Login Page</h2>
+            Emailid&nbsp;&nbsp;<input type="text" id="email" required />
+            <br>
+            Password&nbsp;&nbsp; <input type="password" id="password" required><br><br>
+            <input type="submit" onclick="validateLogin()" id="submit" />
+        </form>
+    </center>
+
+            <script type="text/javascript">
+            function validateLogin(){
+                var lemail=document.getElementById("email").value;
+                var lpassword=document.getElementById("password").value;
+
+                var px=JSON.parse(localStorage.getItem("ru"));
+
+                if(lemail == px.em && lpassword == px.pass){
+                    alert("login successfull");
+
+                }
+                else{
+
+                    alert("try again..something wrong")
+                }
+
+
+                
+
+
+
+            }
+    </script>
+</body>
+
+</html>
